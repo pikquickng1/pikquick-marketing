@@ -3,9 +3,9 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import {FaInstagram } from 'react-icons/fa';
+import {FaInstagram, FaXTwitter } from 'react-icons/fa6';
 import { FiLinkedin } from "react-icons/fi";
-import { LuTwitter, LuMail ,LuPhone} from "react-icons/lu";
+import { LuMail ,LuPhone, LuMapPin} from "react-icons/lu";
 
 import { Modal } from '@/components/ui/Modal';
 
@@ -54,16 +54,23 @@ export function Footer() {
                   href="mailto:hello@pikquick.co"
                   className="flex items-center gap-2 font-inter text-sm text-[#4A5565] transition-colors hover:text-[#4A85E4] sm:text-base"
                 >
-                  <LuMail className="h-5 w-5" />
+                  <LuMail className="h-5 w-5 flex-shrink-0" />
                   hello@pikquick.co
                 </a>
                 <a
                   href="tel:+2348000000000"
                   className="flex items-center gap-2 font-inter text-sm text-[#4A5565] transition-colors hover:text-[#4A85E4] sm:text-base"
                 >
-                  <LuPhone className="h-5 w-5" />
+                  <LuPhone className="h-5 w-5 flex-shrink-0" />
                   +234 800 PIKQUICK
                 </a>
+                <div className="flex items-start gap-2 font-inter text-sm text-[#4A5565] sm:text-base">
+                  <LuMapPin className="h-5 w-5 flex-shrink-0 mt-0.5" />
+                  <span>
+                    The Frontier place 3, Gbenle Street,
+                    Orelope B/Stop, Egbeda, Lagos.
+                  </span>
+                </div>
               </div>
 
               {/* Social Links */}
@@ -74,7 +81,7 @@ export function Footer() {
                   rel="noopener noreferrer"
                   className="flex h-10 w-10 items-center justify-center rounded-2xl bg-[#F9FAFB] border-[0.75px] border-[#F3F4F6] text-[#6B7280] transition-all hover:bg-[#4A85E4] hover:text-white"
                 >
-                  <LuTwitter className="h-5 w-5" />
+                  <FaXTwitter className="h-5 w-5" />
                 </a>
                 <a
                   href="https://instagram.com"
