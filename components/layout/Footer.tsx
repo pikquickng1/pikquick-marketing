@@ -1,21 +1,12 @@
-'use client';
-
-import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import {FaInstagram, FaXTwitter } from 'react-icons/fa6';
 import { FiLinkedin } from "react-icons/fi";
 import { LuMail ,LuPhone, LuMapPin} from "react-icons/lu";
 
-import { Modal } from '@/components/ui/Modal';
-
 export function Footer() {
-  const [showTerms, setShowTerms] = useState(false);
-  const [showPrivacy, setShowPrivacy] = useState(false);
-
   return (
-    <>
-      <footer className="bg-white py-12 sm:py-16 md:py-20" style={{ fontFamily: 'var(--font-inter)' }}>
+    <footer className="bg-white py-12 sm:py-16 md:py-20" style={{ fontFamily: 'var(--font-inter)' }}>
         <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-8 xl:px-10">
           <div className="grid gap-10 sm:gap-12 md:grid-cols-2 lg:grid-cols-4 lg:gap-16">
             
@@ -109,20 +100,20 @@ export function Footer() {
               </h4>
               <ul className="mt-4 space-y-3 sm:mt-5">
                 <li>
-                  <button
-                    onClick={() => setShowTerms(true)}
+                  <Link
+                    href="/terms"
                     className="font-inter text-sm font-medium text-[#4A5565] transition-colors hover:text-[#4A85E4] sm:text-base"
                   >
                     Terms & Conditions
-                  </button>
+                  </Link>
                 </li>
                 <li>
-                  <button
-                    onClick={() => setShowPrivacy(true)}
+                  <Link
+                    href="/privacy"
                     className="font-inter text-sm font-medium text-[#4A5565] transition-colors hover:text-[#4A85E4] sm:text-base"
                   >
                     Privacy Policy
-                  </button>
+                  </Link>
                 </li>
                 <li>
                   <a
@@ -183,66 +174,21 @@ export function Footer() {
               © 2026 Pikquick. All rights reserved.
             </p>
             <div className="flex gap-6">
-              <button
-                onClick={() => setShowPrivacy(true)}
+              <Link
+                href="/privacy"
                 className="font-inter text-sm uppercase tracking-wider text-[#9CA3AF] transition-colors hover:text-[#4A85E4]"
               >
                 Privacy
-              </button>
-              <button
-                onClick={() => setShowTerms(true)}
+              </Link>
+              <Link
+                href="/terms"
                 className="font-inter text-sm uppercase tracking-wider text-[#9CA3AF] transition-colors hover:text-[#4A85E4]"
               >
                 Terms
-              </button>
+              </Link>
             </div>
           </div>
         </div>
       </footer>
-
-      {/* Terms Modal */}
-      <Modal
-        isOpen={showTerms}
-        onCloseAction={() => setShowTerms(false)}
-        title="Terms Policy"
-      >
-        <div className="space-y-4 font-inter text-sm leading-relaxed text-[#6B7280] sm:text-base">
-          <p>
-            Welcome to Pikquick. This is placeholder text for our terms policy. In a real application, this would contain detailed legal information regarding your rights and responsibilities.
-          </p>
-          <p>
-            We take your data and privacy seriously. All interactions on our platform are designed to be safe, secure, and transparent for both requesters and runners.
-          </p>
-          <p>
-            Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          </p>
-          <p>
-            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          </p>
-        </div>
-      </Modal>
-
-      {/* Privacy Modal */}
-      <Modal
-        isOpen={showPrivacy}
-        onCloseAction={() => setShowPrivacy(false)}
-        title="Privacy Policy"
-      >
-        <div className="space-y-4 font-inter text-sm leading-relaxed text-[#6B7280] sm:text-base">
-          <p>
-            Welcome to Pikquick. This is placeholder text for our privacy policy. In a real application, this would contain detailed legal information regarding your rights and responsibilities.
-          </p>
-          <p>
-            We take your data and privacy seriously. All interactions on our platform are designed to be safe, secure, and transparent for both requesters and runners.
-          </p>
-          <p>
-            Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          </p>
-          <p>
-            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          </p>
-        </div>
-      </Modal>
-    </>
   );
 }
